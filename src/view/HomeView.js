@@ -9,24 +9,24 @@ export const HomeView = () => {
   return (
     <ProductCardWrapper>
       <CardContainer>
-        <IntroCard image={testar4} text="lalalala" />
+        <IntroCard image={testar4} text="NikeAirMAXZOOMRAMBO" />
       </CardContainer>
 
       <CardContainer>
-        <ProductCard image={test2} text="blablabla" />
-        <ProductCard image={test2} text="blablabla" />
+        <ProductCard image={test2} text="" />
+        <ProductCard image={test2} text="" />
       </CardContainer>
       <CardContainer>
-        <ProductCard image={test2} text="blablabla" />
-        <ProductCard image={test2} text="blablabla" />
+        <ProductCard image={test2} text="" />
+        <ProductCard image={test2} text="" />
       </CardContainer>
       <CardContainer>
-        <ProductCard image={test2} text="blablabla" />
-        <ProductCard image={test2} text="blablabla" />
+        <ProductCard image={test2} text="" />
+        <ProductCard image={test2} text="" />
       </CardContainer>
       <CardContainer>
-        <ProductCard image={test2} text="blablabla" />
-        <ProductCard image={test2} text="blablabla" />
+        <ProductCard image={test2} text="" />
+        <ProductCard image={test2} text="" />
       </CardContainer>
     </ProductCardWrapper>
   );

@@ -8,7 +8,7 @@ export const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 700px) {
+  @media (max-width: 700px) {
     height: 80px;
   }
 `;
@@ -26,6 +26,15 @@ export const RightContainer = styled.div`
   justify-content: flex-end;
   padding-right: 50px;
 `;
+
+export const SearchContainer = styled.div`
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+`;
+export const Input = styled.input``;
 
 export const NavbarInnerContainer = styled.div`
   width: 100%;
@@ -50,7 +59,7 @@ export const NavBarLink = styled(Link)`
 `;
 
 export const NavBarLinkExtended = styled(Link)`
-  color: green;
+  color: black;
   font-size: x-large;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
@@ -81,6 +90,7 @@ export const NavbarExtendedContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 
   @media (min-width: 700px) {
     display: none;

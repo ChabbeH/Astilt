@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import loggan from "../../shared/images/logga.png";
 import {
   NavbarContainer,
@@ -11,7 +13,10 @@ import {
   Logo,
   OpenLinksButton,
   NavBarLinkExtended,
+  SearchContainer,
+  Input,
 } from "../../style/NavigationBar.style";
+import { Search } from "@mui/icons-material";
 
 export const NavigationBar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
@@ -21,9 +26,12 @@ export const NavigationBar = () => {
         <LeftContainer>
           <NavbarLinkContainer>
             <NavBarLink to="/">Home</NavBarLink>
-            <NavBarLink to="/testsida">Products</NavBarLink>
-            <NavBarLink to="/testsida2">Contact Us</NavBarLink>
-            <NavBarLink to="/testsida3">AllahatarALI</NavBarLink>
+            <NavBarLink to="/appearel">Appearel</NavBarLink>
+            <NavBarLink to="/Sneakers">Sneakers</NavBarLink>
+            <NavBarLink to="/AppearelDetialPage">AppearelDetialPage</NavBarLink>
+            <NavBarLink to="/cart">
+              <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+            </NavBarLink>
             <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
@@ -34,15 +42,18 @@ export const NavigationBar = () => {
           </NavbarLinkContainer>
         </LeftContainer>
         <RightContainer>
+          <SearchContainer>
+            <Input />
+            <Search />
+          </SearchContainer>
           <Logo src={loggan}></Logo>
         </RightContainer>
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
           <NavBarLinkExtended to="/">Home</NavBarLinkExtended>
-          <NavBarLinkExtended to="/testsida">Products</NavBarLinkExtended>
-          <NavBarLinkExtended to="/testsida2">Contact Us</NavBarLinkExtended>
-          <NavBarLinkExtended to="/testsida3">AllahatarALI</NavBarLinkExtended>
+          <NavBarLinkExtended to="/appearel">Appearel</NavBarLinkExtended>
+          <NavBarLinkExtended to="/Sneakers">Sneakers</NavBarLinkExtended>
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
