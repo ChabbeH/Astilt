@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.nav`
   width: 100%;
-  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: red;
+  height: ${(props) => (props.extendNavbar ? "100vh" : "90px")};
   display: flex;
   flex-direction: column;
+  border-bottom: black solid 1px;
 
   @media (max-width: 700px) {
     height: 80px;
@@ -14,27 +14,25 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const LeftContainer = styled.div`
+  flex: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+`;
+export const CenterContainer = styled.div`
   flex: 70%;
   display: flex;
-  align-items: center;
-  padding-left: 5%;
+  justify-content: center;
+  align-items: flex-end;
 `;
 
 export const RightContainer = styled.div`
-  flex: 30%;
+  flex: 15%;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 50px;
-`;
-
-export const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-left: 25px;
-  padding: 5px;
 `;
-export const Input = styled.input``;
 
 export const NavbarInnerContainer = styled.div`
   width: 100%;
@@ -47,7 +45,7 @@ export const NavbarLinkContainer = styled.div`
 `;
 
 export const NavBarLink = styled(Link)`
-  color: yellow;
+  color: black;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
@@ -67,8 +65,7 @@ export const NavBarLinkExtended = styled(Link)`
 `;
 
 export const Logo = styled.img`
-  margin: 10px;
-  max-width: 180px;
+  max-width: 85px;
   height: auto;
 `;
 

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HomeView } from "../view/HomeView";
 import { Appearel } from "../view/Appearel";
 import { Sneakers } from "../view/Sneakers";
-import { AppearelDetialPage } from "../view/AppearelDetialPage";
+import { AppearelDetailPage } from "../view/AppearelDetailPage";
 
 export const Routing = (props) => {
   return (
@@ -13,7 +13,7 @@ export const Routing = (props) => {
         <Routes>
           <Route path="/Appearel" element={<Appearel />} />
           <Route path="/Sneakers" element={<Sneakers />} />
-          <Route path="/AppearelDetialPage" element={<AppearelDetialPage />} />
+          <Route path="/AppearelDetailPage" element={<AppearelDetailPage />} />
           <Route path="/" element={<HomeView />} />
         </Routes>
       </switch>

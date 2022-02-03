@@ -1,8 +1,10 @@
 import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
-import testar from "../shared/images/products/test3.png";
+import testar from "../shared/images/products/simonstest.png";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+`;
 
 const Wrapper = styled.div`
   padding: 50px;
