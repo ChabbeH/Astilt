@@ -96,7 +96,6 @@ const Button = styled.button`
 `;
 
 function Modal({ setOpenModal, product }) {
-  console.log(typeof product.size);
   return (
     <ModalContainer>
       <Wrapper>
@@ -118,14 +117,10 @@ function Modal({ setOpenModal, product }) {
           <FilterContainer>
             <Filter>
               <FilterSize>
-                {product?.size &&
-                  (typeof product.size == Array ? (
-                    product?.size?.map((s, index) => (
-                      <FilterSizeOption key={index}>{s}</FilterSizeOption>
-                    ))
-                  ) : (
-                    <FilterSizeOption>Saknas</FilterSizeOption>
-                  ))}
+                {" "}
+                {product.size.map((item) => (
+                  <FilterSizeOption>{item}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>

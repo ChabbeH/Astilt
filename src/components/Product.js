@@ -1,78 +1,64 @@
-import {
-  FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@mui/icons-material";
 import styled from "styled-components";
 
-const Info = styled.div`
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
-  cursor: pointer;
+export const ProductCardWrapper = styled.div`
+  display: grid;
+  grid-template-rows: repeat(autofill, 1fr);
+  width: 20%;
+  margin: auto;
+  padding: 1%;
 `;
 
 const Container = styled.div`
-  flex: 1;
-  margin: 5px;
-  min-width: 280px;
-  height: 350px;
   display: flex;
+  width: 100%;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: blue;
-  position: relative;
+  border: 2px solid red;
+  border-radius: 25px;
+`;
 
-  &:hover ${Info} {
-    opacity: 1;
-  }
+const InfoContainer = styled.div`
+  flex: 1;
+  align-self: center;
+  padding: 10px;
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 20px;
 `;
 
 const Image = styled.img`
-  height: 75%;
+  max-width: 20vw;
+  width: 100%;
 `;
 
-const Icon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  transition: all 0.5s ease;
-  &:hover {
-    background-color: #e9f5f5;
-    transform: scale(1.1);
-  }
+const ProductTitle = styled.h1`
+  font-weight: 100;
+  font-size: 14px;
+`;
+
+const Price = styled.p`
+  font-weight: 100;
+  font-size: 12px;
 `;
 
 export const Product = ({ item }) => {
   return (
-    <Container>
-      <Image src={item.img} />
-      <Info>
-        <Icon>
-          <ShoppingCartOutlined />
-        </Icon>
-        <Icon>
-          <SearchOutlined />
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlined />
-        </Icon>
-      </Info>
-    </Container>
+    <ProductCardWrapper>
+      <Container>
+        <ImageWrapper>
+          <Image src={item.image} />
+        </ImageWrapper>
+        <InfoContainer>
+          <ProductTitle>{item.text}</ProductTitle>
+          <Price>{item.price}</Price>
+        </InfoContainer>
+      </Container>
+    </ProductCardWrapper>
   );
 };
 

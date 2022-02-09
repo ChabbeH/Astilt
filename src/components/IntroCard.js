@@ -13,9 +13,9 @@ function IntroCard({ image, text }) {
 export const IntroCardWrapper = styled.div`
   width: 100%;
   display: block;
-  font-size: small;
+  font-size: 22px;
   text-align: center;
-  font-family: sans-serif;
+  font-family: Neuropolitical;
   img {
     width: 80%;
   }

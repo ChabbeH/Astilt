@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "Neuropolitical";
+  src: local("Neuropolitical"),
+    url(./fonts/neuropolitical_rg.ttf) format("truetype");
+}

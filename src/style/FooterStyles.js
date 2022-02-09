@@ -1,52 +1,63 @@
 import styled from "styled-components";
 
-export const Box = styled.div`
-  background: black;
-  position: bottom;
-  bottom: 0;
-  width: 100%;
+export const FooterContainer = styled.div`
+  background-color: #141414;
+  color: #ffffff;
+  padding: 1rem 1rem;
 `;
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1000px;
+export const FooterWrapper = styled.div`
+  max-width: 1200px;
   margin: 0 auto;
 `;
 
-export const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-left: 60px;
+export const NewsLetterWrapper = styled.div`
+  margin-top: 1rem;
+  justify-content: space-around;
 `;
 
-export const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  grid-gap: 20px;
+export const FooterMain = styled.div`
+  display: flex;
+  margin-bottom: 4rem;
+`;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
+export const FooterColumn = styled.div`
+  flex-basis: 200px;
+  flex-grow: 1;
+  text-align: center;
+`;
+
+export const FooterHeading = styled.h1`
+  margin-bottom: 1rem;
 `;
 
 export const FooterLink = styled.a`
-  color: #fff;
-  margin-bottom: 20px;
-  font-size: 16px;
+  display: block;
+  width: max-content;
+  padding: 5px 10px;
+  margin: 0 auto;
+  color: #ffffff;
   text-decoration: none;
-
+  curser: pointer;
   &:hover {
-    color: green;
-    transition: 200ms ease-in;
+    color: #cccccc;
   }
 `;
 
-export const Heading = styled.p`
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 40px;
-  font-weight: bold;
+export const FooterBottom = styled.div`
+  display: flex;
+`;
+
+export const Copyright = styled.div`
+  margin-right: auto;
+`;
+
+export const FooterSocial = styled.a`
+  font-size: 34px;
+  margin-left: 1rem;
+  color: white;
+
+  &:hover {
+    color: #cccccc;
+  }
 `;

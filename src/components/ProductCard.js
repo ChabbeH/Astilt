@@ -13,9 +13,9 @@ function ProductCard({ image, text }) {
 export const CardImgWrapper = styled.div`
   width: 100%;
   display: block;
-  font-size: small;
+  font-size: 20px;
   text-align: center;
-  font-family: sans-serif;
+  font-family: Neuropolitical;
   img {
     width: 80%;
   }

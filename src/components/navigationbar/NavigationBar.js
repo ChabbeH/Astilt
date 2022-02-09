@@ -29,7 +29,7 @@ export const NavigationBar = () => {
         </LeftContainer>
         <CenterContainer>
           <NavbarLinkContainer>
-            <NavBarLink to="/appearel">Appearel</NavBarLink>
+            <NavBarLink to="/Appearel">Appearel</NavBarLink>
             <NavBarLink to="/Sneakers">Sneakers</NavBarLink>
             <NavBarLink to="/cart"></NavBarLink>
             <OpenLinksButton
