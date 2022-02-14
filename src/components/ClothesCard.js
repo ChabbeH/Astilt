@@ -52,7 +52,7 @@ const Price = styled.p`
   ${mobile({ fontSize: "8px" })};
 `;
 
-export const Product = ({ item }) => {
+export const ClothesCard = ({ item }) => {
   const [openModal, setOpenModal] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
   return (
@@ -78,4 +78,4 @@ export const Product = ({ item }) => {
   );
 };
 
-export default Product;
+export default ClothesCard;

@@ -29,7 +29,7 @@ const Footer = () => {
           </FooterColumn>
           <FooterColumn>
             <FooterHeading>Services</FooterHeading>
-            <FooterLink>länkaaboutsida?</FooterLink>
+            <FooterLink>Shipment</FooterLink>
           </FooterColumn>
         </FooterMain>
         <FooterBottom>

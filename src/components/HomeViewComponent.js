@@ -44,7 +44,7 @@ export const HomeViewComponent = () => {
                     setActiveProduct(product);
                   }}
                 >
-                  <IntroCard image={product.image} text={product.text} />
+                  <IntroCard image={product?.image} text={product?.text} />
                 </CardContainer>
               ) : (
                 <ProductWrapper

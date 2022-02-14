@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 function ProductCard({ image, text }) {
   return (
@@ -15,10 +15,10 @@ export const CardImgWrapper = styled.div`
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: Neuropolitical;
   img {
     width: 80%;
   }
+  ${mobile({ fontSize: "12px" })}
 `;
 
 export default ProductCard;

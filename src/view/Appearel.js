@@ -1,10 +1,10 @@
 import React from "react";
-import Products from "../components/Products";
+import Clothes from "../components/Clothes";
 
 export const Appearel = () => {
   return (
     <div>
-      <Products />
+      <Clothes />
     </div>
   );
 };

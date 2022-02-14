@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 function IntroCard({ image, text }) {
   return (
@@ -13,12 +14,12 @@ function IntroCard({ image, text }) {
 export const IntroCardWrapper = styled.div`
   width: 100%;
   display: block;
-  font-size: 22px;
+  font-size: 20px;
   text-align: center;
-  font-family: Neuropolitical;
   img {
     width: 80%;
   }
+  ${mobile({ fontSize: "12px" })}
 `;
 
 export default IntroCard;

@@ -13,7 +13,7 @@ export const FooterWrapper = styled.div`
 
 export const NewsLetterWrapper = styled.div`
   margin-top: 1rem;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const FooterMain = styled.div`
@@ -25,6 +25,9 @@ export const FooterColumn = styled.div`
   flex-basis: 200px;
   flex-grow: 1;
   text-align: center;
+  &:hover {
+    color: red;
+  }
 `;
 
 export const FooterHeading = styled.h1`
@@ -40,7 +43,7 @@ export const FooterLink = styled.a`
   text-decoration: none;
   curser: pointer;
   &:hover {
-    color: #cccccc;
+    color: red;
   }
 `;
 
@@ -58,6 +61,6 @@ export const FooterSocial = styled.a`
   color: white;
 
   &:hover {
-    color: #cccccc;
+    color: red;
   }
 `;

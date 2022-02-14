@@ -1,13 +1,10 @@
-import ProductDetailPage from "../components/ProductDetailPage";
-import ProductListPage from "../components/ProductListPage";
-import ShoppingCart from "../components/ShoppingCart";
+import Products from "../components/Products";
 
 export const Sneakers = () => {
   return (
     <div>
-      <ProductDetailPage />
-      <ProductListPage />
-      <ShoppingCart />
+      {" "}
+      <Products />
     </div>
   );
 };
