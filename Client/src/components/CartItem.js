@@ -35,7 +35,7 @@ const CartItem = ({ item }) => {
       <CartItemImage src={item.image} alt="" />
       <CartItemDesc>{item.text}</CartItemDesc>
       <CartItemDesc>{item.price}</CartItemDesc>
-      <CartItemButton onClick={() => removeItem(item._id)}>
+      <CartItemButton onClick={() => removeItem(item.id)}>
         Remove
       </CartItemButton>
     </CartItemContainer>

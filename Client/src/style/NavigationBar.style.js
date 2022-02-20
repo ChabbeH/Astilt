@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
 
 export const NavbarContainer = styled.nav`
   width: 100%;
@@ -7,10 +8,6 @@ export const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: column;
   border-bottom: black solid 1px;
-
-  @media (max-width: 400px) {
-    height: 80px;
-  }
 `;
 
 export const LeftContainer = styled.div`
@@ -33,6 +30,7 @@ export const RightContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${mobile({ marginRight: "10px" })}
 `;
 
 export const NavbarInnerContainer = styled.div`
@@ -51,9 +49,7 @@ export const NavBarLink = styled(Link)`
   text-decoration: none;
   margin: 10px;
 
-  @media (max-width: 500px) {
-    display: none;
-  }
+  ${mobile({ display: "none" })}
 `;
 
 export const NavBarLinkExtended = styled(Link)`
@@ -76,8 +72,7 @@ export const OpenLinksButton = styled.button`
   color: red;
   font-size: 45px;
   cursor: pointer;
-
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     display: none;
   }
 `;
@@ -93,8 +88,7 @@ export const NavbarExtendedContainer = styled.div`
   align-items: center;
   z-index: 1;
   overflow: hidden;
-
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     display: none;
   }
 `;

@@ -65,7 +65,10 @@ const Cart = () => {
           <CartTotal>
             <CartTitle>Cart Total</CartTitle>
             <CartPrice>
-              {cartItems.reduce((amount, item) => item.price + amount, 0)}
+              {cartItems.reduce(
+                (amount, item) => parseInt(item.price) + amount,
+                0
+              ) + " SEK"}
             </CartPrice>
           </CartTotal>
         </ConstWrapper>

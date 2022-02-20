@@ -1,17 +1,16 @@
-import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
-function IntroCard({ image, text }) {
+function ProductCard({ image, text }) {
   return (
-    <IntroCardWrapper>
+    <CardImgWrapper>
       <img src={image} alt="" />
       <p>{text}</p>
-    </IntroCardWrapper>
+    </CardImgWrapper>
   );
 }
 
-export const IntroCardWrapper = styled.div`
+export const CardImgWrapper = styled.div`
   width: 100%;
   display: block;
   font-size: 20px;
@@ -19,7 +18,7 @@ export const IntroCardWrapper = styled.div`
   img {
     width: 80%;
   }
-  ${mobile({ fontSize: "12px" })}
+  ${mobile({ fontSize: "8px" })}
 `;
 
-export default IntroCard;
+export default ProductCard;

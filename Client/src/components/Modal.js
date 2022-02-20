@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import CartContext from "../context/cart/CartContext";
 
-const ModalContainer = styled.div`
+export const ModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,6 @@ const ModalContainer = styled.div`
   background-color: #4f4f4ff2;
   margin-top: -200px;
   padding-bottom: 200px;
-  ${mobile({ paddingBottom: "" })}
 `;
 
 const Wrapper = styled.div`
@@ -41,6 +40,7 @@ const InfoContainer = styled.div`
   flex: 1;
   align-self: center;
   padding: 10px;
+  ${mobile({ fontSize: "1rem" })}
 `;
 
 const TitleBtnWrapper = styled.div`
@@ -73,39 +73,36 @@ const Condition = styled.p`
 `;
 
 const FilterContainer = styled.div`
-  width: 50%;
-  margin: 30px 0px;
+  margin: 30px 0.5rem;
   display: flex;
   justify-content: space-between;
+  ${mobile({ margin: "1.2rem 0.1rem" })}
 `;
 
 const Filter = styled.div`
-  display: flex;
   align-items: center;
 `;
 
 const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
+  padding: 0.6rem;
 `;
 
 const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
-  width: 50%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ width: "8vh" })}
+  ${mobile({ justifyContent: "left" })}
 `;
 
 const Button = styled.button`
-  padding: 15px;
-  border: 3px solid black;
+  padding: 0.5rem;
+  border: 2px solid black;
   border-radius: 8px !important;
   background-color: white;
   cursor: pointer;
-  font-weight: 500;
+  font-family: neuropolitical;
+  font-size: 12px;
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -113,6 +110,7 @@ const Button = styled.button`
   &:hover {
     background-color: #f8f4f4;
   }
+  ${mobile({ fontSize: "8px" })}
 `;
 
 function Modal({ setOpenModal, product }) {

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 export const FooterContainer = styled.div`
   background-color: #141414;
@@ -9,11 +10,12 @@ export const FooterContainer = styled.div`
 export const FooterWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  ${mobile({ marginTop: "2rem" })}
 `;
 
 export const NewsLetterWrapper = styled.div`
   margin-top: 1rem;
-  justify-content: space-between;
+  ${mobile({ textAlign: "center" })}
 `;
 
 export const FooterMain = styled.div`
@@ -25,13 +27,11 @@ export const FooterColumn = styled.div`
   flex-basis: 200px;
   flex-grow: 1;
   text-align: center;
-  &:hover {
-    color: red;
-  }
 `;
 
 export const FooterHeading = styled.h1`
   margin-bottom: 1rem;
+  ${mobile({ fontSize: "1rem" })}
 `;
 
 export const FooterLink = styled.a`
@@ -41,18 +41,22 @@ export const FooterLink = styled.a`
   margin: 0 auto;
   color: #ffffff;
   text-decoration: none;
-  curser: pointer;
+  cursor: pointer;
+
   &:hover {
     color: red;
   }
+  ${mobile({ fontSize: "0.8rem" })}
 `;
 
 export const FooterBottom = styled.div`
   display: flex;
+  ${mobile({ fontSize: "0.8rem" })}
 `;
 
 export const Copyright = styled.div`
   margin-right: auto;
+  margin-left: 2rem;
 `;
 
 export const FooterSocial = styled.a`

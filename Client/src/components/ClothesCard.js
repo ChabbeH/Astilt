@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { mobile, tablet } from "../responsive";
-import Modal from "./Modal";
+import { mobile } from "../responsive";
+import { useNavigate } from "react-router-dom";
 
 export const ProductCardWrapper = styled.div`
   display: grid;
   grid-template-rows: repeat(autofill, 1fr);
-  width: 25%;
+  width: 100%;
   margin: 0.5rem;
-  margin-left: 1.2rem;
-  margin-right: 1.2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding: 2%;
   box-shadow: #63707e 2px 4px 8px;
-  ${mobile({ width: "100%" })}
+  max-width: 15vw;
+  ${mobile({ maxWidth: "7rem" })}
 `;
 
 const Container = styled.div`
@@ -20,47 +20,41 @@ const Container = styled.div`
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  ${tablet({ alignItems: "center" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 10px;
-  ${tablet({ alignSelf: "center" })}
 `;
 
 const ImageWrapper = styled.div`
   align-items: center;
   padding: 20px;
-  ${mobile({ alignSelf: "center" })}
 `;
 
 const Image = styled.img`
   width: 100%;
-  ${mobile({ maxWidth: "40vw" })}
 `;
 
 const ProductTitle = styled.h1`
   font-weight: 100;
-  font-size: 14px;
-  ${mobile({ fontSize: "10px" })}
+  font-size: 12px;
+  ${mobile({ fontSize: "8px" })}
 `;
 
 const Price = styled.p`
   font-weight: 100;
-  font-size: 12px;
-  ${mobile({ fontSize: "8px" })};
+  font-size: 10px;
+  ${mobile({ fontSize: "8px" })}
 `;
 
-export const Product = ({ item }) => {
-  const [openModal, setOpenModal] = useState(false);
-  const [activeProduct, setActiveProduct] = useState(null);
+export const ClothesCard = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <ProductCardWrapper>
       <Container
         onClick={() => {
-          setOpenModal(true);
-          setActiveProduct(item);
+          navigate("/Sneakers/Detail", { state: item });
         }}
       >
         <ImageWrapper>
@@ -71,11 +65,8 @@ export const Product = ({ item }) => {
           <Price>{item?.price}</Price>
         </InfoContainer>
       </Container>
-      {openModal && (
-        <Modal product={activeProduct} setOpenModal={setOpenModal} />
-      )}
     </ProductCardWrapper>
   );
 };
 
-export default Product;
+export default ClothesCard;
