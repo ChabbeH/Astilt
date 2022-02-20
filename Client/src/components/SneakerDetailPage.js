@@ -10,6 +10,7 @@ const SneakerContainer = styled.div`
   width: 100vw;
   height: 100vh;
   justify-content: center;
+  margin-top: 4rem;
 `;
 
 const SneakersWrapper = styled.div`
@@ -64,6 +65,7 @@ const Button = styled.button`
   display: inline-block;
   text-decoration: none;
   text-align: center;
+  margin-bottom: 1rem;
 
   &:hover {
     background-color: #f8f4f4;

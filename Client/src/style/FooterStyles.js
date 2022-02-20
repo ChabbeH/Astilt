@@ -5,6 +5,10 @@ export const FooterContainer = styled.div`
   background-color: #141414;
   color: #ffffff;
   padding: 1rem 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 export const FooterWrapper = styled.div`

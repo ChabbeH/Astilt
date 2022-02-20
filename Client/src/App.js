@@ -15,8 +15,8 @@ function App() {
         <Routing>
           <NavigationBar />
           <Cart />
+          <Footer />
         </Routing>
-        <Footer />
       </CartState>
     </>
   );

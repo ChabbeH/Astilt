@@ -12,6 +12,7 @@ export const ProductCardWrapper = styled.div`
   padding: 2%;
   box-shadow: #63707e 2px 4px 8px;
   max-width: 15vw;
+  cursor: pointer;
   ${mobile({ maxWidth: "7rem" })}
 `;
 

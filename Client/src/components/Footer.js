@@ -13,8 +13,10 @@ import {
   FooterWrapper,
   NewsLetterWrapper,
 } from "../style/FooterStyles";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <FooterContainer>
       <NewsLetterWrapper>
@@ -24,12 +26,25 @@ const Footer = () => {
         <FooterMain>
           <FooterColumn>
             <FooterHeading>About us</FooterHeading>
-            <FooterLink>The company</FooterLink>
-            <FooterLink>The Crew</FooterLink>
+
+            <FooterLink onClick={() => navigate("/TheCompanyView")}>
+              The company
+            </FooterLink>
+            <FooterLink onClick={() => navigate("/ContactUs")}>
+              Contact us
+            </FooterLink>
           </FooterColumn>
           <FooterColumn>
             <FooterHeading>Services</FooterHeading>
-            <FooterLink>Shipment</FooterLink>
+            <FooterLink onClick={() => navigate("/PrivacyPolicy")}>
+              Privacy policy
+            </FooterLink>
+            <FooterLink onClick={() => navigate("/TermsOfService")}>
+              Terms of service
+            </FooterLink>
+            <FooterLink onClick={() => navigate("/YourRights")}>
+              Your rights
+            </FooterLink>
           </FooterColumn>
         </FooterMain>
         <FooterBottom>
