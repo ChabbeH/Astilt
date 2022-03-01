@@ -7,14 +7,21 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  display: flex;
+  //dessa 4 la jag till för texten
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  height: 100vh;
 `;
 
 export const Clothes = () => {
   return (
     <Container>
-      {clothesPic.map((item) => (
+      <h1>COMING SOON!</h1>
+      {/*     {clothesPic.map((item) => (
         <Product item={item} key={item.id} />
-      ))}
+      ))} */}
     </Container>
   );
 };

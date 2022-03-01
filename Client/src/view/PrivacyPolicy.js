@@ -1,27 +1,54 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  ${mobile({
+    alignItems: "flex-start",
+    marginTop: "0.1rem",
+  })}
+`;
+
 const ContainerText = styled.p`
   line-height: 24px;
+  max-width: 80vw;
+  margin-top: 4rem;
+  ${mobile({ fontSize: "8px", lineHeight: "12px", marginTop: "2rem" })}
+`;
+
+const Title = styled.h1`
+  ${mobile({ fontSize: "14px", lineHeight: "21px" })}
+`;
+
+const Stitle = styled.h3`
+  ${mobile({ fontSize: "12px", lineHeight: "18px" })}
+`;
+
+const LTitle = styled.h4`
+  ${mobile({ fontSize: "10px", lineHeight: "15px" })}
 `;
 
 export const PrivacyPolicy = () => {
   return (
     <Container>
       <ContainerText>
-        <h1>Privacy Policy</h1>
+        <Title>Privacy Policy</Title>
         This Privacy Policy describes how astilt.com collects, uses, and
         discloses your Personal Information when you visit or make a purchase
         from the Site.
-        <h3>Collecting Personal Information</h3> When you visit the Site, we
-        collect certain information about your device, your interaction with the
-        Site, and information necessary to process your purchases. We may also
-        collect additional information if you contact us for customer support.
-        In this Privacy Policy, we refer to any information that can uniquely
-        identify an individual (including the information below) as “Personal
-        Information”. See the list below for more information about what
-        Personal Information we collect and why. <h4>Device information</h4>
+        <Stitle>Collecting Personal Information</Stitle> When you visit the
+        Site, we collect certain information about your device, your interaction
+        with the Site, and information necessary to process your purchases. We
+        may also collect additional information if you contact us for customer
+        support. In this Privacy Policy, we refer to any information that can
+        uniquely identify an individual (including the information below) as
+        “Personal Information”. See the list below for more information about
+        what Personal Information we collect and why.{" "}
+        <LTitle>Device information</LTitle>
         <p>
           • Examples of Personal Information collected: version of web browser,
           IP address, time zone, cookie information, what sites or products you
@@ -39,7 +66,7 @@ export const PrivacyPolicy = () => {
         <p>
           • Disclosure for a business purpose: shared with our processor Google
         </p>
-        <h4> Order information </h4>{" "}
+        <LTitle> Order information </LTitle>{" "}
         <p>
           • Examples of Personal Information collected: name, billing address,
           shipping address, payment information (including credit card numbers),
@@ -59,7 +86,7 @@ export const PrivacyPolicy = () => {
           • Disclosure for a business purpose: shared with our processor Google,
           Meta.
         </p>{" "}
-        <h4>Customer support information</h4>{" "}
+        <LTitle>Customer support information</LTitle>{" "}
         <p>
           • Examples of Personal Information collected: name, billing address,
           shipping address, payment information (including credit card numbers),
@@ -71,7 +98,7 @@ export const PrivacyPolicy = () => {
           • Disclosure for a business purpose: shared with our processor Google,
           Meta
         </p>{" "}
-        <h3>Minors</h3>{" "}
+        <Stitle>Minors</Stitle>{" "}
         <p>
           The Site is not intended for individuals under the age of 18. We do
           not intentionally collect Personal Information from children. If you
@@ -79,7 +106,7 @@ export const PrivacyPolicy = () => {
           Personal Information, please contact us at the address below to
           request deletion.
         </p>{" "}
-         <h1> Sharing Personal Information</h1>
+         <Title> Sharing Personal Information</Title>
         <div>
           We share your Personal Information with service providers to help us
           provide our services and fulfill our contracts with you, as described
@@ -121,7 +148,7 @@ export const PrivacyPolicy = () => {
           the Digital Advertising Alliance’s opt-out portal at:
           http://optout.aboutads.info/.
         </div>
-         <h1> Using Personal Information</h1>
+         <Title> Using Personal Information</Title>
         <div>
           We use your personal Information to provide our services to you, which
           includes: offering products for sale, processing payments, shipping

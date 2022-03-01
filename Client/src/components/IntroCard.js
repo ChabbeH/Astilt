@@ -17,7 +17,7 @@ export const IntroCardWrapper = styled.div`
   font-size: 20px;
   text-align: center;
   img {
-    width: 80%;
+    width: 50%;
   }
   ${mobile({ fontSize: "8px" })}
 `;

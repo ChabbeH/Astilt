@@ -45,7 +45,7 @@ export const NavigationBar = () => {
           </NavbarLinkContainer>
         </CenterContainer>
         <RightContainer>
-          <FontAwesomeIcon
+          {/*  <FontAwesomeIcon
             icon={faShoppingCart}
             onClick={showHideCart}
           ></FontAwesomeIcon>
@@ -54,7 +54,7 @@ export const NavigationBar = () => {
             <div>
               <span>{cartItems.length}</span>
             </div>
-          )}
+          )} */}
         </RightContainer>
       </NavbarInnerContainer>
       {extendNavbar && (

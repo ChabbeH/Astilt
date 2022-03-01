@@ -1,24 +1,25 @@
 import { useContext } from "react";
 import CartContext from "../context/cart/CartContext";
 import styled from "styled-components";
-import { mobile } from "../responsive";
-
+import { mobile, tablet } from "../responsive";
 import { useLocation } from "react-router-dom";
 
 const SneakerContainer = styled.div`
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   margin-top: 4rem;
+  ${mobile({ marginTop: "0.1rem" })}
+  ${tablet({ marginTop: "0.1rem" })}
 `;
 
 const SneakersWrapper = styled.div`
   display: flex;
   padding: 1rem;
   max-width: 80%;
-
   ${mobile({ flexDirection: "column" })}
+  ${tablet({ flexDirection: "column" })}
 `;
 
 const ImageContainer = styled.div`
@@ -27,6 +28,8 @@ const ImageContainer = styled.div`
   margin-right: 7rem;
   margin-top: 4rem;
   align-self: flex-start;
+  ${mobile({ marginTop: "1rem" })}
+  ${tablet({ marginTop: "1rem" })}
 `;
 
 const Image = styled.img`
@@ -37,12 +40,16 @@ const SneakerInfoContainer = styled.div`
   flex: 1;
   text-align: left;
   margin-left: 1rem;
+  ${mobile({ marginTop: "1rem" })}
+  ${tablet({ marginTop: "1rem" })}
 `;
 const ProductTitle = styled.h1`
   line-height: 48px;
+  ${mobile({ fontSize: "14px", lineHeight: "21px" })}
 `;
 const Price = styled.p`
   line-height: 48px;
+  ${mobile({ fontSize: "10px", lineHeight: "15px" })}
 `;
 const Condition = styled.p``;
 const FilterContainer = styled.div``;
@@ -77,6 +84,15 @@ const ProductDesc = styled.p`
   margin-bottom: 10rem;
   font-size: 14px;
   line-height: 21px;
+  ${mobile({ fontSize: "10px", lineHeight: "15px" })}
+`;
+
+const PriceTitle = styled.h1`
+  ${mobile({ fontSize: "14px", lineHeight: "21px" })}
+`;
+
+const ProductDescTitle = styled.h1`
+  ${mobile({ fontSize: "14px", lineHeight: "21px" })}
 `;
 
 const SneakerDetailPage = () => {
@@ -92,7 +108,7 @@ const SneakerDetailPage = () => {
 
         <SneakerInfoContainer>
           <ProductTitle>{location.state.text}</ProductTitle>
-          <h1>Price</h1>
+          <PriceTitle>Price</PriceTitle>
           <Price>{location.state.price}</Price>
           <Condition>{location.state.condition}</Condition>
 
@@ -104,12 +120,12 @@ const SneakerDetailPage = () => {
             </Filter>
           </FilterContainer>
           <AddContainer>
-            <Button onClick={() => addToCart(location.state)}>
+            {/*  <Button onClick={() => addToCart(location.state)}>
               ADD TO CART
-            </Button>
+            </Button> */}
           </AddContainer>
           <ProductDesc>
-            <h1>Product Description</h1>
+            <ProductDescTitle>Product Description</ProductDescTitle>
             {location.state.desc}
           </ProductDesc>
         </SneakerInfoContainer>

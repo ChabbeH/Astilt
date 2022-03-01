@@ -11,6 +11,8 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-left: 1%;
+  width: 100%;
+
   cursor: pointer;
 `;
 
@@ -19,12 +21,12 @@ export const ProductCardWrapper = styled.div`
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 1fr min-content;
   justify-self: stretch;
-  grid-gap: 20px;
+  grid-gap: 10px;
   width: 100%;
 `;
 
 export const ProductWrapper = styled.div`
-  max-width: 50%;
+  max-width: 40%;
 `;
 
 export const HomeViewComponent = () => {

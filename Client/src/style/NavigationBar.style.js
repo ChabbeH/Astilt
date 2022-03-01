@@ -17,12 +17,17 @@ export const LeftContainer = styled.div`
   align-items: center;
   padding: 1px;
   margin-top: 0.2rem;
+  ${mobile({
+    flex: "55%",
+    justifyContent: "space-between",
+  })}
 `;
 export const CenterContainer = styled.div`
   flex: 70%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  ${mobile({ flex: "15%" })}
 `;
 
 export const RightContainer = styled.div`
@@ -30,7 +35,8 @@ export const RightContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${mobile({ marginRight: "10px" })}
+
+  ${mobile({ flex: "15%" })}
 `;
 
 export const NavbarInnerContainer = styled.div`

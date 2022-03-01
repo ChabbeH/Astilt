@@ -144,9 +144,9 @@ function Modal({ setOpenModal, product }) {
               </FilterSize>
             </Filter>
           </FilterContainer>
-          <AddContainer>
+          {/*  <AddContainer>
             <Button onClick={() => addToCart(product)}>ADD TO CART</Button>
-          </AddContainer>
+          </AddContainer> */}
         </InfoContainer>
       </Wrapper>
     </ModalContainer>

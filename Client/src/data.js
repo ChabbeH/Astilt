@@ -29,7 +29,7 @@ export const homeViewProducts = [
     price: "3499 SEK",
     condition: "Condition new",
     size: [43.5],
-    desc: "One of Yeezy's most celebrated designs received a reflective makeover with the\n adidas Yeezy Boost 350 V2 Beluga Reflective. The adidas Yeezy Boost 350 V2\nBeluga Reflective builds off of the original Beluga colorway by adding reflective \n qualities and speckled orange accents to its Primeknit upper. Signature details \nlike a Boost sole and orange side stripe complete the design. The adidas Yeezy \nBoost 350 V2 Beluga Reflective released in December of 2021. ",
+    desc: "One of Yeezy's most celebrated designs received a reflective makeover with the adidas Yeezy Boost 350 V2 Beluga Reflective. The adidas Yeezy Boost 350 V2 Beluga Reflective builds off of the original Beluga colorway by adding reflective qualities and speckled orange accents to its Primeknit upper. Signature details like a Boost sole and orange side stripe complete the design. The adidas Yeezy Boost 350 V2 Beluga Reflective released in December of 2021. ",
   },
   {
     id: 2,

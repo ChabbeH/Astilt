@@ -5,10 +5,6 @@ export const FooterContainer = styled.div`
   background-color: #141414;
   color: #ffffff;
   padding: 1rem 1rem;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 `;
 
 export const FooterWrapper = styled.div`
@@ -19,12 +15,13 @@ export const FooterWrapper = styled.div`
 
 export const NewsLetterWrapper = styled.div`
   margin-top: 1rem;
-  ${mobile({ textAlign: "center" })}
+  ${mobile({ textAlign: "center", marginBottom: "3rem" })}
 `;
 
 export const FooterMain = styled.div`
   display: flex;
   margin-bottom: 4rem;
+  ${mobile({ marginBottom: "2rem" })}
 `;
 
 export const FooterColumn = styled.div`
@@ -55,18 +52,24 @@ export const FooterLink = styled.a`
 
 export const FooterBottom = styled.div`
   display: flex;
-  ${mobile({ fontSize: "0.8rem" })}
+  ${mobile({
+    fontSize: "0.8rem",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  })}
 `;
 
 export const Copyright = styled.div`
   margin-right: auto;
   margin-left: 2rem;
+  ${mobile({ marginBottom: "1rem" })}
 `;
 
 export const FooterSocial = styled.a`
   font-size: 34px;
   margin-left: 1rem;
   color: white;
+  ${mobile({ marginBottom: "1rem" })}
 
   &:hover {
     color: red;
