@@ -24,6 +24,8 @@ export const NavigationBar = () => {
   const navigate = useNavigate();
   const [extendNavbar, setExtendNavbar] = useState(false);
 
+  console.log(cartItems, showHideCart);
+
   return (
     <NavbarContainer>
       <NavbarInnerContainer extendNavbar={extendNavbar}>
@@ -45,7 +47,7 @@ export const NavigationBar = () => {
           </NavbarLinkContainer>
         </CenterContainer>
         <RightContainer>
-          {/*  <FontAwesomeIcon
+          <FontAwesomeIcon
             icon={faShoppingCart}
             onClick={showHideCart}
           ></FontAwesomeIcon>
@@ -54,7 +56,7 @@ export const NavigationBar = () => {
             <div>
               <span>{cartItems.length}</span>
             </div>
-          )} */}
+          )}
         </RightContainer>
       </NavbarInnerContainer>
       {extendNavbar && (

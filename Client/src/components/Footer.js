@@ -12,6 +12,7 @@ import {
   FooterSocial,
   FooterWrapper,
   NewsLetterWrapper,
+  SocialWrapper,
 } from "../style/FooterStyles";
 import { useNavigate } from "react-router-dom";
 
@@ -52,15 +53,20 @@ const Footer = () => {
             {" "}
             Astilt © {new Date().getFullYear()} - All rights reserved.
           </Copyright>
-          <FooterSocial
-            href="https://www.instagram.com/a.s.tilt/"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
-          </FooterSocial>
-          <FooterSocial href="https://www.facebook.com/TILT.SE" target="_blank">
-            <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
-          </FooterSocial>
+          <SocialWrapper>
+            <FooterSocial
+              href="https://www.instagram.com/a.s.tilt/"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+            </FooterSocial>
+            <FooterSocial
+              href="https://www.facebook.com/TILT.SE"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
+            </FooterSocial>
+          </SocialWrapper>
         </FooterBottom>
       </FooterWrapper>
     </FooterContainer>

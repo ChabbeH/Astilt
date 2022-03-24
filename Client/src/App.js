@@ -17,6 +17,7 @@ import { TermsOfService } from "../src/view/TermsOfService";
 import { YourRights } from "../src/view/YourRights";
 import SneakerDetailPage from "../src/components/SneakerDetailPage";
 import { ScrollToTop } from "../src/components/ScrollToTop";
+import SuccessPayment from "./view/SuccessPayment";
 
 function App() {
   return (
@@ -27,15 +28,16 @@ function App() {
           <NavigationBar />
           <Cart />
           <Routes>
-            <Route path="/Appearel" element={<Appearel />} />
-            <Route path="/Sneakers" element={<Sneakers />} />
-            <Route path="/TheCompanyView" element={<TheCompanyView />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-            <Route path="/TermsOfService" element={<TermsOfService />} />
-            <Route path="/YourRights" element={<YourRights />} />
-            <Route path="/Sneakers/Detail" element={<SneakerDetailPage />} />
+            <Route path="/appearel" element={<Appearel />} />
+            <Route path="/sneakers" element={<Sneakers />} />
+            <Route path="/theCompanyView" element={<TheCompanyView />} />
+            <Route path="/contactUs" element={<ContactUs />} />
+            <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+            <Route path="/termsOfService" element={<TermsOfService />} />
+            <Route path="/yourRights" element={<YourRights />} />
+            <Route path="/sneakers/detail" element={<SneakerDetailPage />} />
             <Route path="/" element={<HomeView />} />
+            <Route path="/success" element={<SuccessPayment />} />
           </Routes>
 
           <Footer />

@@ -10,11 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.24.0",
+    "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "express-validator": "^6.14.0",
+    "firebase": "^9.6.7",
     "mongoose": "^6.2.2",
     "muller": "^1.1.0",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15"
   }
 }

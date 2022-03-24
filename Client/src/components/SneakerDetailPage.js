@@ -120,9 +120,9 @@ const SneakerDetailPage = () => {
             </Filter>
           </FilterContainer>
           <AddContainer>
-            {/*  <Button onClick={() => addToCart(location.state)}>
+            <Button onClick={() => addToCart(location.state)}>
               ADD TO CART
-            </Button> */}
+            </Button>
           </AddContainer>
           <ProductDesc>
             <ProductDescTitle>Product Description</ProductDescTitle>

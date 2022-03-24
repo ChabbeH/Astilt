@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./Modal";
-import { homeViewProducts } from "../data";
+import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import IntroCard from "../components/IntroCard";
 import styled from "styled-components";
@@ -32,12 +32,23 @@ export const ProductWrapper = styled.div`
 export const HomeViewComponent = () => {
   const [openModal, setOpenModal] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/products");
+        setProducts(res.data);
+      } catch (err) {}
+    };
+    getProducts();
+  }, []);
 
   return (
     <ProductCardWrapper>
       <CardContainer>
-        {homeViewProducts &&
-          homeViewProducts.map((product, i) => (
+        {products &&
+          products.map((product, i) => (
             <>
               {i === 0 ? (
                 <CardContainer
@@ -46,7 +57,11 @@ export const HomeViewComponent = () => {
                     setActiveProduct(product);
                   }}
                 >
-                  <IntroCard image={product?.image} text={product?.text} />
+                  <IntroCard
+                    image={product?.image}
+                    text={product?.text}
+                    key={product.id}
+                  />
                 </CardContainer>
               ) : (
                 <ProductWrapper
@@ -55,7 +70,11 @@ export const HomeViewComponent = () => {
                     setActiveProduct(product);
                   }}
                 >
-                  <ProductCard image={product?.image} text={product?.text} />
+                  <ProductCard
+                    image={product?.image}
+                    text={product?.text}
+                    key={product.id}
+                  />
                 </ProductWrapper>
               )}
             </>

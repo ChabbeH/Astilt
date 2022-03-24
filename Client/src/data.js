@@ -74,7 +74,7 @@ export const homeViewProducts = [
     price: "4000 SEK",
     condition: "Condition used 9/10",
     size: [43.5],
-    desc: "It’s officially 2019 and Virgil is back applying pressure on the sneaker world with the release of the Air Max 90 Off-White Black. This AM 90 is sporting a black upper, white Nike “Swoosh”, black midsole, and a black sole. These sneakers released in January 2019. The Virgil x Nike World Tour continues, so don’t miss out and place a Bid on StockX today.",
+    desc: "It’s officially 2019 and Virgil is back applying pressure on the sneaker world with the release of the Air Max 90 Off-White Black. This AM 90 is sporting a black upper, white Nike “Swoosh”, black midsole, and a black sole. These sneakers released in January 2019.",
   },
   {
     id: 7,
@@ -90,6 +90,7 @@ export const homeViewProducts = [
     image: img8,
     text: "Yeezy - 450 - Cloud white",
     price: "1099 SEK",
+    condition: "Condition new",
     size: [40, 41, 42, 43, 44, 45],
     desc: "In early 2020, images of the adidas Yeezy 450 began to circulate when Kanye was spotted outside of the Yeezy Season 8 fashion show during Paris Fashion Week. This otherworldly design captured the attention of Yeezy fans, mostly because it is unlike anything Yeezy has ever made. Then, one year later, Yeezy finally released its brand new 450 silhouette with the adidas Yeezy 450 Cloud White. The adidas Yeezy 450 Cloud White is one of Yeezy’s most unique designs yet. Its simplified two-piece construction appears complex due to its extreme, molded foam sole. The sole clasps the mesh upper, acting as an exoskeleton to provide structure. Similar to the Yeezy 700 V3, this release does not feature Boost or adiPRENE technology. Instead, Yeezy utilizes EVA foam to deliver comfort. The adidas Yeezy 450 Cloud White released in March of 2021.",
   },

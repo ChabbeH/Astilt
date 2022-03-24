@@ -128,7 +128,7 @@ function Modal({ setOpenModal, product }) {
           </TitleCloseBtn>
         </TitleBtnWrapper>
         <ImageContainer>
-          <Image src={product?.image} alt="" />
+          <Image src={product?.image} alt="" key={product.id} />
         </ImageContainer>
         <InfoContainer>
           <ProductTitle>{product?.text}</ProductTitle>
@@ -144,9 +144,9 @@ function Modal({ setOpenModal, product }) {
               </FilterSize>
             </Filter>
           </FilterContainer>
-          {/*  <AddContainer>
+          <AddContainer>
             <Button onClick={() => addToCart(product)}>ADD TO CART</Button>
-          </AddContainer> */}
+          </AddContainer>
         </InfoContainer>
       </Wrapper>
     </ModalContainer>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { homeViewProducts } from "../data";
 import Product from "./Product";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Container = styled.div`
   padding: 1rem;
@@ -10,9 +11,21 @@ const Container = styled.div`
 `;
 
 export const Products = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/products");
+        setProducts(res.data);
+      } catch (err) {}
+    };
+    getProducts();
+  }, []);
+
   return (
     <Container>
-      {homeViewProducts.map((item) => (
+      {products.map((item) => (
         <Product item={item} key={item.id} />
       ))}
     </Container>

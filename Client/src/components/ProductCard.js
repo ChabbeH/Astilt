@@ -4,7 +4,9 @@ import { mobile } from "../responsive";
 function ProductCard({ image, text }) {
   return (
     <CardImgWrapper>
-      <img src={image} alt="" />
+      <CardWrapper>
+        <img src={image} alt="" />
+      </CardWrapper>
       <p>{text}</p>
     </CardImgWrapper>
   );
@@ -19,6 +21,10 @@ export const CardImgWrapper = styled.div`
     width: 80%;
   }
   ${mobile({ fontSize: "8px" })}
+`;
+
+const CardWrapper = styled.div`
+  min-height: 100px;
 `;
 
 export default ProductCard;

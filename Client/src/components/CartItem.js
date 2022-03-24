@@ -26,7 +26,9 @@ const CartItemButton = styled.button`
   cursor: pointer;
 `;
 
-const CartItemDesc = styled.ul``;
+const CartItemDesc = styled.ul`
+  flex: 1;
+`;
 
 const CartItem = ({ item }) => {
   const { removeItem } = useContext(CartContext);

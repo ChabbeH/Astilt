@@ -52,16 +52,17 @@ export const FooterLink = styled.a`
 
 export const FooterBottom = styled.div`
   display: flex;
+  justify-content: space-around;
   ${mobile({
     fontSize: "0.8rem",
-    flexWrap: "wrap",
+    flexDirection: "column",
     justifyContent: "center",
   })}
 `;
 
 export const Copyright = styled.div`
-  margin-right: auto;
-  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
   ${mobile({ marginBottom: "1rem" })}
 `;
 
@@ -69,9 +70,14 @@ export const FooterSocial = styled.a`
   font-size: 34px;
   margin-left: 1rem;
   color: white;
-  ${mobile({ marginBottom: "1rem" })}
+  ${mobile({ marginBottom: "1rem", marginRight: "0.8rem", marginLeft: "1rem" })}
 
   &:hover {
     color: red;
   }
+`;
+
+export const SocialWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
