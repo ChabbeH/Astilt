@@ -9,6 +9,7 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const mailRoute = require("./utils/mail");
 const stripeRoute = require("./routes/stripe");
+const subscribeRoute = require("./routes/subscribe");
 const cors = require("cors");
 const bodyParser = require("express").json;
 
@@ -31,6 +32,7 @@ app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/mail", mailRoute);
 app.use("/api/checkout", stripeRoute);
+app.use("/api/subscribe", subscribeRoute);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");

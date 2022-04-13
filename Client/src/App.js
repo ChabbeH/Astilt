@@ -18,31 +18,41 @@ import { YourRights } from "../src/view/YourRights";
 import SneakerDetailPage from "../src/components/SneakerDetailPage";
 import { ScrollToTop } from "../src/components/ScrollToTop";
 import SuccessPayment from "./view/SuccessPayment";
+import AdminView from "./view/AdminView";
+import { AuthProivder } from "./view/admin/context/AuthProvider";
+import RequireAuth from "./view/admin/components/RequireAuth";
+import LoginView from "./view/LoginView";
 
 function App() {
   return (
     <>
-      <CartState>
-        <Router>
-          <ScrollToTop />
-          <NavigationBar />
-          <Cart />
-          <Routes>
-            <Route path="/appearel" element={<Appearel />} />
-            <Route path="/sneakers" element={<Sneakers />} />
-            <Route path="/theCompanyView" element={<TheCompanyView />} />
-            <Route path="/contactUs" element={<ContactUs />} />
-            <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-            <Route path="/termsOfService" element={<TermsOfService />} />
-            <Route path="/yourRights" element={<YourRights />} />
-            <Route path="/sneakers/detail" element={<SneakerDetailPage />} />
-            <Route path="/" element={<HomeView />} />
-            <Route path="/success" element={<SuccessPayment />} />
-          </Routes>
+      <AuthProivder>
+        <CartState>
+          <Router>
+            <ScrollToTop />
+            <NavigationBar />
+            <Cart />
+            <Routes>
+              <Route element={<RequireAuth />}>
+                <Route path="/admin" element={<AdminView />} />
+              </Route>
+              <Route path="/login" element={<LoginView />} />
+              <Route path="/appearel" element={<Appearel />} />
+              <Route path="/sneakers" element={<Sneakers />} />
+              <Route path="/theCompanyView" element={<TheCompanyView />} />
+              <Route path="/contactUs" element={<ContactUs />} />
+              <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+              <Route path="/termsOfService" element={<TermsOfService />} />
+              <Route path="/yourRights" element={<YourRights />} />
+              <Route path="/sneakers/detail" element={<SneakerDetailPage />} />
+              <Route path="/" element={<HomeView />} />
+              <Route path="/success" element={<SuccessPayment />} />
+            </Routes>
 
-          <Footer />
-        </Router>
-      </CartState>
+            <Footer />
+          </Router>
+        </CartState>
+      </AuthProivder>
     </>
   );
 }

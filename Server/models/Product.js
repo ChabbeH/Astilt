@@ -8,6 +8,7 @@ const ProductSchema = new mongoose.Schema(
     condition: { typ: String },
     size: { type: Array, required: true },
     desc: { type: String, required: true },
+    inStock: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

@@ -1,8 +1,9 @@
 import SendIcon from "@mui/icons-material/Send";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { mobile } from "../responsive";
+import axios from "axios";
 
 const Container = styled.div`
   height: 10vh;
@@ -38,6 +39,18 @@ const AccordionContainer = styled.div``;
 
 const Newsletter = () => {
   const [openAccordion, setOpenAccordion] = useState(false);
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    console.log("TESTAR", setPost);
+    const fetchPosts = async () => {
+      try {
+        const res = await axios.post("http://localhost:5000/api/subscribe");
+        setPost(res.data);
+      } catch (err) {}
+    };
+    fetchPosts();
+  }, []);
 
   return (
     <Container>
@@ -53,6 +66,7 @@ const Newsletter = () => {
             size="small"
             color="error"
             endIcon={<SendIcon />}
+            onClick={() => setPost()}
           >
             SUBSCRIBE
           </Button>

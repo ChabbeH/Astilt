@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { mobile } from "../responsive";
 
 const FormContainer = styled.form`
   background-color: white;
@@ -14,6 +15,12 @@ const FormContainer = styled.form`
   max-width: calc(100vw - 40px);
   box-sizing: border-box;
   margin-top: 100px;
+  ${mobile({
+    fontSize: "10px",
+    lineHeight: "15px",
+    width: "280px",
+    marginRight: "5rem",
+  })}
 `;
 
 const FormTitle = styled.h2`
@@ -21,6 +28,10 @@ const FormTitle = styled.h2`
   padding-bottom: 10px;
   border-bottom: 3px solid;
   width: 180px;
+  ${mobile({
+    fontSize: "12px",
+    lineHeight: "15px",
+  })}
 `;
 
 const FormWrapper = styled.div`
@@ -78,13 +89,13 @@ const FormButton = styled.input`
   }
 `;
 
-function ContactForm() {
+function ContactForm({ setSent }) {
   const initialValues = { senderName: "", senderEmail: "", message: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubit, setIsSubit] = useState(false);
+  const [isSubmit, setIsSubit] = useState(false);
   const [post, setPost] = useState(null);
-  console.log("kollapådetta", Object.keys(formErrors).lenght === 0 && isSubit);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -94,18 +105,18 @@ function ContactForm() {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubit(true);
-    fetchPosts();
   };
 
   useEffect(() => {
-    if (Object.keys(formErrors).lenght === 0 && isSubit) {
-      console.log("vadhänderhär", formValues);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log("funkar?", formValues);
     }
-  }, [formErrors, isSubit, formValues]);
+  }, [formErrors, formValues, isSubmit]);
 
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    console.log("jamannen", errors);
     if (!values.senderName) {
       errors.senderName = "Name is required!";
     }
@@ -120,24 +131,28 @@ function ContactForm() {
     return errors;
   };
 
-  const fetchPosts = async () => {
-    const data = { formValues };
-    console.log("data", data);
-    try {
-      const res = await axios.post(
-        "http://localhost:5000/api/mail/sendmail",
-        data
-      );
-      setPost(res.data);
-      console.log("res", res);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  useEffect(() => {
+    const fetchPosts = async () => {
+      if (Object.keys(formErrors).length === 0 && isSubmit) {
+        const data = { formValues };
+
+        try {
+          const res = await axios.post(
+            "http://localhost:5000/api/mail/sendmail",
+            data
+          );
+          setPost(res.data, setSent(true));
+          console.log("res", res);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    };
+    fetchPosts();
+  }, [formErrors, formValues, isSubmit, setSent]);
 
   return (
     <>
-      {Object.keys(formErrors).lenght === 0 && isSubit}
       <FormContainer onSubmit={submitForm}>
         <FormTitle>Contact us</FormTitle>
 

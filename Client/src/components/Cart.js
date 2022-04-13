@@ -8,6 +8,7 @@ import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import logga from "../shared/images/logga.png";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -20,6 +21,12 @@ const ConstWrapper = styled.div`
   border: 1px solid gray;
   padding: 10px;
   z-index: 10;
+  ${mobile({
+    display: "flex",
+    flexDirection: "column",
+    width: "80%",
+    left: "25px",
+  })}
 `;
 
 const InnerWrapper = styled.div`
@@ -27,6 +34,7 @@ const InnerWrapper = styled.div`
   max-height: 50vh;
   overflow-y: auto;
   border-top: 1px solid gray;
+  ${mobile({ maxHeight: "15vh" })}
 `;
 
 const CartTotal = styled.div`
@@ -35,6 +43,7 @@ const CartTotal = styled.div`
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
+  ${mobile({ fontSize: "8px" })}
 `;
 
 const IconWrapper = styled.div`
@@ -65,7 +74,7 @@ const CheckoutBtn = styled.button`
   &:hover {
     background-color: green;
   }
-  ${mobile({ fontSize: "8px" })}
+  ${mobile({ fontSize: "6px" })}
 `;
 
 const Cart = () => {
@@ -117,8 +126,8 @@ const Cart = () => {
               <h4>Cart is Empty</h4>
             ) : (
               <ul>
-                {cartItems.map((item) => (
-                  <CartItem key={item.id} item={item} />
+                {cartItems.map((item, index) => (
+                  <CartItem key={item.id} item={item} index={index} />
                 ))}
               </ul>
             )}
@@ -135,7 +144,7 @@ const Cart = () => {
           <CheckoutWrapper>
             <StripeCheckout
               name="ASTILT"
-              image="http://localhost:3000/static/media/logga.aadc25fa.png"
+              image={logga}
               currency="SEK"
               billingAddress
               shippingAddress

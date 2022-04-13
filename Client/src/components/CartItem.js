@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../context/cart/CartContext";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const CartItemContainer = styled.li`
   border-bottom: 1px solid gray;
@@ -11,6 +12,7 @@ const CartItemContainer = styled.li`
   display: flex;
   gap: 5px;
   align-items: center;
+  ${mobile({ fontSize: "8px" })}
 `;
 
 const CartItemImage = styled.img`
@@ -24,22 +26,21 @@ const CartItemButton = styled.button`
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  ${mobile({ fontSize: "10px", borderRadius: "2px", padding: "2px 4px" })}
 `;
 
 const CartItemDesc = styled.ul`
   flex: 1;
 `;
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, index }) => {
   const { removeItem } = useContext(CartContext);
   return (
     <CartItemContainer>
       <CartItemImage src={item.image} alt="" />
       <CartItemDesc>{item.text}</CartItemDesc>
       <CartItemDesc>{item.price}</CartItemDesc>
-      <CartItemButton onClick={() => removeItem(item.id)}>
-        Remove
-      </CartItemButton>
+      <CartItemButton onClick={() => removeItem(index)}>Remove</CartItemButton>
     </CartItemContainer>
   );
 };
