@@ -33,14 +33,14 @@ const CartItemDesc = styled.ul`
   flex: 1;
 `;
 
-const CartItem = ({ item, index }) => {
+const CartItem = ({ item }) => {
   const { removeItem } = useContext(CartContext);
   return (
     <CartItemContainer>
       <CartItemImage src={item.image} alt="" />
       <CartItemDesc>{item.text}</CartItemDesc>
       <CartItemDesc>{item.price}</CartItemDesc>
-      <CartItemButton onClick={() => removeItem(index)}>Remove</CartItemButton>
+      <CartItemButton onClick={() => removeItem()}>Remove</CartItemButton>
     </CartItemContainer>
   );
 };
